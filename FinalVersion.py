@@ -3,11 +3,10 @@ import json
 from datetime import datetime
 import re
 
-# Your API keys and headers
-sendgrid_api_key = 'HIDDEN'
-airtable_api_key = "NICE"
-airtable_base_id = 'TRY'
-airtable_table_name = 'NERD'
+sendgrid_api_key = os.getenv('SENDGRID_API_KEY')
+airtable_api_key = os.getenv('AIRTABLE_API_KEY')
+airtable_base_id = os.getenv('AIRTABLE_BASE_ID')
+airtable_table_name = os.getenv('AIRTABLE_TABLE_NAME')
 sendgrid_headers = {"Authorization": f"Bearer {sendgrid_api_key}"}
 
 def extract_links(html_content):
