@@ -19,6 +19,9 @@ jobs:
     - name: Install dependencies
       run: |
         pip install requests
+        
+    - name: Make script executable
+      run: chmod +x ./FinalVersion.py
 
     - name: Run Python script
       env:
@@ -26,4 +29,5 @@ jobs:
         AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
         AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
         AIRTABLE_TABLE_NAME: ${{ secrets.AIRTABLE_TABLE_NAME }}
-      run: FinalVersion.py
+      run: ./FinalVersion.py
+
