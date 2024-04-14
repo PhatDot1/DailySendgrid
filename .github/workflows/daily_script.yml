@@ -2,7 +2,7 @@ name: Daily Python Script
 
 on:
   schedule:
-    - cron: '59 7 * * *'  # Runs at 7:59 AM UTC (GMT) every day
+    - cron: '59 7 * * *'  
 
 jobs:
   run-script:
@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install requests
-        
+
     - name: Make script executable
       run: chmod +x ./FinalVersion.py
 
@@ -30,4 +30,3 @@ jobs:
         AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
         AIRTABLE_TABLE_NAME: ${{ secrets.AIRTABLE_TABLE_NAME }}
       run: ./FinalVersion.py
-
