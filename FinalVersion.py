@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
 import requests
 import json
 from datetime import datetime
 import re
+import os  # Ensure 'os' is imported
 
 sendgrid_api_key = os.getenv('SENDGRID_API_KEY')
 airtable_api_key = os.getenv('AIRTABLE_API_KEY')
