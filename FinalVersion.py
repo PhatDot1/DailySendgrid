@@ -32,7 +32,7 @@ def fetch_single_sends():
     if response.status_code == 200:
         single_sends = response.json()['result']
         sorted_sends = sorted(single_sends, key=lambda x: x['send_at'] if x['send_at'] else '0000-00-00T00:00:00Z', reverse=True)
-        recent_sends = sorted_sends[:10]
+        recent_sends = sorted_sends[:4]
         return recent_sends
     else:
         print(f"Failed to fetch Single Sends: {response.status_code} - {response.text}")
